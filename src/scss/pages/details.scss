@@ -1,0 +1,53 @@
+@use '../placeholders/root.scss';
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 13rem;
+    margin-bottom: 4rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20rem;
+        background: root.$black-gradient;
+        z-index: -1;
+    }
+
+    &__cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    &__list {
+        margin-top: .3rem;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        &-item {
+            background-color: root.$accent-pink;
+            padding: .3rem .5rem;
+            border-radius: 3rem;
+            color: root.$typeography-secondary;
+            font-weight: 600;
+            font-size: .9em;
+            text-transform: capitalize;
+        }
+    }
+
+    &__sub-heading {
+        margin-bottom: 1rem;
+    }
+}

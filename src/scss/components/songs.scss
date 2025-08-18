@@ -1,0 +1,25 @@
+@use '../placeholders/root.scss';
+
+.songs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+
+    &-card {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        &__icon {
+            background: root.$gradient;
+            padding: .5rem;
+            border-radius: 50%;
+            font-size: 1.8em;
+            color: root.$primary-white;
+        }
+
+        &__text {
+            margin-left: auto;
+        }
+    }
+}

@@ -1,0 +1,91 @@
+@use '../placeholders/root.scss';
+@use 'sass:map';
+
+$accent-colours: (
+    1: root.$accent-pink,
+    2: root.$accent-red,
+    3: root.$accent-orange,
+    4: root.$accent-yellow,
+    5: root.$accent-lime,
+    6: root.$accent-green,
+    7: root.$accent-cyan,
+    8: root.$accent-light-blue,
+    9: root.$accent-dark-blue
+);
+
+.genre {
+    &-list {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &__details {
+            @for $i from 1 through 100 {
+                &:nth-child(#{$i}) {
+                    .genre-list__name {
+                        // Calculate how much $i is over 9, and make that $index.
+                        $index: ($i - 1) % 9 + 1;
+                        // Give the background-color that matches $index.
+                        background-color: map.get($accent-colours, $index);
+                    }
+                }
+            }
+        }
+
+        &__name {
+            padding-block: 1rem;
+            padding-inline: 1.5rem 1rem;
+            border-radius: .8rem;
+            list-style: none;
+            font-size: .9em;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: root.$typeography-secondary;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &::after {
+                content: '';
+                background-image: url('/arrow.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: inline-block;
+                width: 1.2rem;
+                height: 1.2rem;
+                transition: 300ms ease-out;
+            }
+
+            [open] &::after {
+                transform: rotate(90deg);
+            }
+        }
+
+        &__subgenre {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: .8rem;
+            margin-inline: 1.5rem 1rem;
+
+            &:first-of-type {
+                margin-top: 1.3rem;
+            }
+
+            &:last-of-type {
+                margin-bottom: 1.4rem;
+            }
+
+            &-name {
+                font-weight: 300;
+                font-size: .9em;
+                text-transform: capitalize;
+            }
+
+            &-icon {
+                color: root.$primary-black;
+            }
+        }
+    }
+}

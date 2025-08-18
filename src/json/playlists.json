@@ -1,0 +1,104 @@
+{
+    "list": [
+        {
+            "id": 1,
+            "cover": "/placeholder.svg",
+            "name": "Workout Mix 2024",
+            "songs": [
+                {
+                    "id": 1,
+                    "title": "Power Up",
+                    "artist": "The Motivators",
+                    "duration": 198000
+                },
+                {
+                    "id": 2,
+                    "title": "Run Fast",
+                    "artist": "Energy Crew",
+                    "duration": 215000
+                },
+                {
+                    "id": 3,
+                    "title": "Gym Time",
+                    "artist": "Fitness Beats",
+                    "duration": 184000
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "cover": "/placeholder.svg",
+            "name": "Chill Vibes",
+            "songs": [
+                {
+                    "id": 4,
+                    "title": "Ocean Waves",
+                    "artist": "Calm Waters",
+                    "duration": 246000
+                },
+                {
+                    "id": 5,
+                    "title": "Sunset Dreams",
+                    "artist": "Lofi Beats",
+                    "duration": 173000
+                },
+                {
+                    "id": 6,
+                    "title": "Gentle Rain",
+                    "artist": "Nature Sounds",
+                    "duration": 292000
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "cover": "/placeholder.svg",
+            "name": "Road Trip Classics",
+            "songs": [
+                {
+                    "id": 7,
+                    "title": "Highway Dreams",
+                    "artist": "The Travelers",
+                    "duration": 234000
+                },
+                {
+                    "id": 8,
+                    "title": "Desert Road",
+                    "artist": "Journey Band",
+                    "duration": 256000
+                },
+                {
+                    "id": 9,
+                    "title": "Night Drive",
+                    "artist": "Midnight Riders",
+                    "duration": 189000
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "cover": "/placeholder.svg",
+            "name": "Summer Hits",
+            "songs": [
+                {
+                    "id": 10,
+                    "title": "Beach Party",
+                    "artist": "Sunny Vibes",
+                    "duration": 203000
+                },
+                {
+                    "id": 11,
+                    "title": "Summer Nights",
+                    "artist": "Tropical Dreams",
+                    "duration": 195000
+                },
+                {
+                    "id": 12,
+                    "title": "Poolside",
+                    "artist": "The Wave Makers",
+                    "duration": 218000
+                }
+            ]
+        }
+    ]
+}

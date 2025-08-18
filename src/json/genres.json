@@ -1,0 +1,103 @@
+{
+  "genres": [
+    {
+      "id": 1,
+      "name": "Alternative",
+      "subgenres": [
+        "Indie Rock",
+        "Grunge",
+        "Post-Punk",
+        "Alternative Metal",
+        "Brit Pop"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Blues",
+      "subgenres": [
+        "Chicago Blues",
+        "Delta Blues",
+        "Electric Blues",
+        "Jazz Blues",
+        "Soul Blues"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Classical",
+      "subgenres": [
+        "Baroque",
+        "Chamber Music",
+        "Choral",
+        "Symphony",
+        "Opera"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Country",
+      "subgenres": [
+        "Bluegrass",
+        "Contemporary Country",
+        "Country Pop",
+        "Honky Tonk",
+        "Western"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Dance",
+      "subgenres": [
+        "Disco",
+        "House",
+        "Techno",
+        "Trance",
+        "EDM"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Electronic",
+      "subgenres": [
+        "Ambient",
+        "Downtempo",
+        "Dubstep",
+        "Synthpop",
+        "IDM"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Fitness & Workout",
+      "subgenres": [
+        "Cardio",
+        "High Intensity",
+        "Running",
+        "Yoga",
+        "Meditation"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Hip-Hop/Rap",
+      "subgenres": [
+        "Old School",
+        "Trap",
+        "Gangsta Rap",
+        "Underground",
+        "East Coast"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Industrial",
+      "subgenres": [
+        "Industrial Metal",
+        "EBM",
+        "Noise",
+        "Dark Ambient",
+        "Power Electronics"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+@use '../placeholders/root.scss';
+
+body.darkmode {
+    .walkthrough {
+        &__steps-icon {
+            border-color: root.$primary-white;
+        }
+    }
+
+    .header {
+        &__icon {
+            color: root.$primary-white;
+        }
+    }
+
+    .genre-list {
+        &__subgenre-icon {
+            color: root.$primary-white;
+        }
+    }
+
+    .music-control {
+        &__btn {
+            fill: root.$primary-white;
+        }
+    }
+
+    .footer {
+        background-color: root.$secondary-black;
+        box-shadow: 0px -5px 5px root.$secondary-black-transparent;
+
+        &-menu__icon {
+            &.featured.active {
+                fill: url(#gradient);
+                background: root.$primary-white;
+            }
+
+            &.active {
+                fill: root.$primary-white;
+            }
+
+            &.darkmode-btn {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

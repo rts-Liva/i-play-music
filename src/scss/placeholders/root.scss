@@ -1,0 +1,24 @@
+$primary-white: #FFF;
+$primary-black: #341931;
+$secondary-black: #111625;
+$black-transparent: #00000026;
+$secondary-black-transparent: #00000080;
+
+$accent-pink: #EE0979;
+$accent-red: #E54028;
+$accent-orange: #FF6A00;
+$accent-yellow: #F2BC06;
+$accent-lime: #5EB11C;
+$accent-light-green: #1DB954;
+$accent-green: #3A7634;
+$accent-cyan: #0ABEBE;
+$accent-light-blue: #00A1CB;
+$accent-dark-blue: #115793;
+
+$typeography-primary: #341931;
+$typeography-secondary: #FFF;
+$typeography-tertiary: #EE0979;
+
+$gradient: linear-gradient(to right, $accent-pink, $accent-orange);
+$text-gradient: linear-gradient(to right, $accent-pink, $accent-orange 40%);
+$black-gradient: linear-gradient(to top, $secondary-black -80%, transparent);

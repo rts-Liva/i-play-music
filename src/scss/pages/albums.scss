@@ -1,0 +1,68 @@
+@use '../placeholders/root.scss';
+
+.album {
+    padding-inline: 0;
+
+    .heading, .album-menu, .album-list {
+        margin-inline: 1.5rem;
+    }
+
+    &-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 1rem;
+
+        &__btn {
+            background: none;
+            border: none;
+            color: root.$typeography-tertiary;
+            text-transform: capitalize;
+            font-weight: 300;
+        }
+    }
+
+    &-slider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding: .3rem;
+        padding-left: 0;
+
+        &__cover {
+            width: 8rem;
+            height: 8rem;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 8px 2px root.$black-transparent;
+            scroll-snap-align: center;
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+
+        &-card {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+
+            &__cover {
+                width: 3rem;
+                height: 3rem;
+                object-fit: cover;
+                border-radius: .5rem;
+                box-shadow: 0px 0px 8px 2px root.$black-transparent;
+            }
+
+            &__text {
+                margin-left: auto;
+            }
+        }
+    }
+}
