@@ -36,7 +36,9 @@ function LoginPage() {
                 <button type="submit" className="login__form__btn">log in</button>
             </form>
             <p className="text login__text">or</p>
-            <Link href='#' className="login__spotify">
+            <Link href={
+                `https://accounts.spotify.com/authorize?response_type=code&client_id=${process.env.CLIENT_ID}&scope=user-read-private%20user-read-email&redirect_uri=${process.env.CALLBACK_URL}`
+            } className="login__spotify">
                 Login with Spotify <FaSpotify className="login__spotify-icon" />
             </Link>
         </>

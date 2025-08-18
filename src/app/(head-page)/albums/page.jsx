@@ -1,13 +1,16 @@
+import Fetch from "@/components/fetch";
 import FeaturedAlbums from "@/components/cards/featured-albums";
 import NewReleases from "@/components/cards/new-releases";
-import albums from '@/json/albums.json';
 import '@/scss/pages/albums.scss';
 
 export const metadata = {
     title: 'Albums'
 };
 
-function AlbumsPage() {
+async function AlbumsPage() {
+    const featuredAlbums = await Fetch('albums?ids=6P1p6YKpnipMo8CQKfTGOB%2C0ILF2d6YqP3llZ66mD96hQ%2C1A2GTWGtFfWp7KSQTwWOyo%2C4aawyAB9vmqN3uQ7FjRGTy%2C3mufRbVLnu4dO8dP8fJRb0');
+    const newAlbums = await Fetch('browse/new-releases');
+
     return (
         <>
             <h2 className="heading heading--gradient">all albums</h2>
@@ -17,8 +20,8 @@ function AlbumsPage() {
                     <button className="album-menu__btn">view all</button>
                 </section>
                 <div className="album-slider">
-                    {albums?.featuredAlbums?.length > 0 ? (
-                        albums?.featuredAlbums?.map(album => (
+                    {featuredAlbums.albums.length > 0 ? (
+                        featuredAlbums.albums.map(album => (
                             <FeaturedAlbums album={album} key={album.id} />
                         ))
                     ) : <p className="text">No featured albums found...</p>}
@@ -30,8 +33,8 @@ function AlbumsPage() {
                     <button className="album-menu__btn">view all</button>
                 </section>
                 <div className="album-list">
-                    {albums?.newReleases?.length > 0 ? (
-                        albums?.newReleases?.map(album => (
+                    {newAlbums.albums.items.length > 0 ? (
+                        newAlbums.albums?.items?.map(album => (
                             <NewReleases album={album} key={album.id} />
                         ))
                     ) : <p className="text">No new releases found...</p>}

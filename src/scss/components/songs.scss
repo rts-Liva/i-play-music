@@ -18,6 +18,20 @@
             color: root.$primary-white;
         }
 
+        &__heading {
+            max-width: 60vw;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &__artist {
+            max-width: 50vw;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
         &__text {
             margin-left: auto;
         }

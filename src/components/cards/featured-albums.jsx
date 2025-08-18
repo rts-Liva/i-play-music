@@ -4,8 +4,8 @@ function FeaturedAlbums({ album }) {
     return (
         <Link href={`/albums/${album.id}`}>
             <img
-                src={album.imagePath}
-                alt={`${album.title} cover`}
+                src={album.images[0].url}
+                alt={`${album.name} cover`}
                 className="album-slider__cover" />
         </Link>
     );

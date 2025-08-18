@@ -30,7 +30,7 @@ function PlaylistSlider({ playlists, playlistIndex }) {
         const isLeftSwipe = distance > minSwipeDistance;
         const isRightSwipe = distance < -minSwipeDistance;
 
-        if (isLeftSwipe && activeIndex < playlists.list.length - 1) {
+        if (isLeftSwipe && activeIndex < playlists.length - 1) {
             setActiveIndex(activeIndex + 1);
         }
 
@@ -79,10 +79,10 @@ function PlaylistSlider({ playlists, playlistIndex }) {
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
         >
-            {playlists?.list?.length > 0 ? (
-                playlists?.list?.map((playlist, index) => (
+            {playlists.length > 0 ? (
+                playlists.map((playlist, index) => (
                     <img
-                        src={playlist.cover}
+                        src={playlist.images[0].url}
                         alt={`${playlist.name} cover`}
                         key={playlist.id}
                         className={`playlist-slider__cover ${slidePosition(index)}`} />

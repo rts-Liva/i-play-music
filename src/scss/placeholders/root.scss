@@ -21,4 +21,4 @@ $typeography-tertiary: #EE0979;
 
 $gradient: linear-gradient(to right, $accent-pink, $accent-orange);
 $text-gradient: linear-gradient(to right, $accent-pink, $accent-orange 40%);
-$black-gradient: linear-gradient(to top, $secondary-black -80%, transparent);
+$black-gradient: linear-gradient(to top, $secondary-black -80%, $black-transparent);

@@ -1,6 +1,6 @@
 import Songs from "@/components/cards/songs";
+import Fetch from "@/components/fetch";
 import PlaylistSlider from "@/components/sliders/playlist-slider";
-import playlists from '@/json/playlists.json';
 import '@/scss/pages/playlists.scss';
 
 export const metadata = {
@@ -9,19 +9,20 @@ export const metadata = {
 
 async function PlaylistsPage({ searchParams }) {
     const { index } = await searchParams;
-    const playlist = playlists.list[index];
+    const playlists = await Fetch('me/playlists');
+    const tracks = await Fetch(`playlists/${playlists.items[index].id}/tracks?limit=50`);
 
     return (
         <>
             <div className="background"></div>
             <h2 className="heading heading--light">playlists</h2>
-            <PlaylistSlider playlists={playlists} playlistIndex={index} />
+            <PlaylistSlider playlists={playlists.items} playlistIndex={index} />
             <section className="playlist-info">
-                <h3 className="playlist-info__name">{playlist.name}</h3>
+                <h3 className="playlist-info__name">{playlists.items[index].name}</h3>
                 <div className="songs">
-                    {playlist.songs.length > 0 ? (
-                        playlist.songs.map(song => (
-                            <Songs song={song} key={song.id} />
+                    {tracks.items.length > 0 ? (
+                        tracks.items.map(song => (
+                            <Songs song={song.track} key={song.track.id} />
                         ))
                     ) : <p className='text'>No songs found...</p>}
                 </div>
