@@ -1,4 +1,3 @@
-import UpdateDarkmode from '@/components/update-darkmode';
 import '@/scss/style.scss';
 
 export const metadata = {

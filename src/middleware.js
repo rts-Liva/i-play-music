@@ -3,6 +3,10 @@ import { NextResponse } from "next/server";
 export default async function middleware(request) {
     const { pathname } = request.nextUrl;
 
+    // if (!request.cookies.has('ipm_showed_splash')) {
+    //     return NextResponse.redirect(new URL('/splash', request.url));
+    // }
+
     if (pathname.includes('/login') || pathname.includes('/api')) {
         return;
     }

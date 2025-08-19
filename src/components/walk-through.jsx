@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { BsSoundwave } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa6";
 import { IoIosMusicalNote } from "react-icons/io";
-import RenderDarkmode from "./render-darkmode";
+import RenderDarkmode from "./darkmode/render-darkmode";
 import WalkthroughSlider from "./sliders/walk-through-slider";
 import Link from "next/link";
 

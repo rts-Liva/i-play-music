@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { IoIosArrowBack, IoIosSearch } from "react-icons/io";
-import RenderDarkmode from "./render-darkmode";
+import RenderDarkmode from "./darkmode/render-darkmode";
 import '@/scss/components/header.scss';
 
 function Header({ colour = 'dark', navigateReturn = true, search = true }) {

@@ -6,7 +6,7 @@ import { GiSoundWaves } from "react-icons/gi";
 import { MdLibraryMusic } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import UpdateDarkmode from "./update-darkmode";
+import UpdateDarkmode from "./darkmode/update-darkmode";
 import SvgGradient from "./svg-gradient";
 import Link from "next/link";
 import '@/scss/components/footer.scss';
