@@ -1,3 +1,6 @@
+import PlayerProvider from '@/providers/player-provider';
+import Player from '@/components/player';
+import '@/scss/placeholders/reset.scss';
 import '@/scss/style.scss';
 
 export const metadata = {
@@ -12,7 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <PlayerProvider>
+          {children}
+          <Player />
+        </PlayerProvider>
       </body>
     </html>
   );

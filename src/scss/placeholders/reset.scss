@@ -38,4 +38,10 @@ body {
     &.darkmode {
         background-color: root.$primary-black;
     }
+
+    &:has(div.media-player) {
+        main {
+            padding-bottom: 10rem !important;
+        }
+    }
 }

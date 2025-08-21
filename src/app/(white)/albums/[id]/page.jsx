@@ -29,7 +29,12 @@ async function AlbumDetailsPage({ params }) {
                 <div className="songs">
                     {album.tracks.items.length > 0 ? (
                         album.tracks.items.map(song => (
-                            <Songs song={song} key={song.id} />
+                            <Songs song={{
+                                ...song,
+                                album: {
+                                    images: album.images
+                                }
+                            }} key={song.id} />
                         ))
                     ) : <p className='text'>No songs found...</p>}
                 </div>
