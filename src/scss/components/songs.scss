@@ -1,0 +1,43 @@
+@use '../placeholders/root.scss';
+
+.songs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+
+    &-card {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        background: none;
+        border: none;
+        font-size: 1em;
+        text-align: left;
+
+        &__icon {
+            background: root.$gradient;
+            padding: .5rem;
+            border-radius: 50%;
+            font-size: 1.8em;
+            color: root.$primary-white;
+        }
+
+        &__heading {
+            max-width: 60vw;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &__artist {
+            max-width: 50vw;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &__text {
+            margin-left: auto;
+        }
+    }
+}

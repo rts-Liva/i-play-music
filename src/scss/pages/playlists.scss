@@ -1,0 +1,100 @@
+@use '../placeholders/root.scss';
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    z-index: -1;
+    background: root.$gradient;
+    mask-image: url('/background.svg');
+    -webkit-mask-image: url('/background.svg');
+    mask-size: auto 100%;
+    -webkit-mask-size: auto 100%;
+    mask-repeat: repeat-x;
+    -webkit-mask-repeat: repeat-x;
+}
+
+.playlist {
+    padding-inline: 0;
+
+    &-slider {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: hidden;
+        position: relative;
+        height: 10rem;
+        margin-inline: -1.5rem;
+
+        &__cover {
+            position: absolute;
+            top: 0;
+            width: 9.68rem;
+            height: 9.68rem;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 8px 2px root.$black-transparent;
+            scroll-snap-align: center;
+            transition: all 300ms ease;
+            opacity: 0;
+            z-index: 1;
+
+            &.active {
+                left: 50%;
+                transform: scale(1) translateX(-50%);
+                z-index: 2;
+                opacity: 1;
+            }
+
+            &.prev {
+                left: 0;
+                transform: scale(.65) translateX(-50%);
+                opacity: 1;
+            }
+
+            &.outside-prev {
+                left: 0;
+                transform: scale(.65) translateX(-125%);
+            }
+
+            &.next {
+                right: 0;
+                transform: scale(.65) translateX(50%);
+                opacity: 1;
+            }
+
+            &.outside-next {
+                right: 0;
+                transform: scale(.65) translateX(125%);
+            }
+        }
+    }
+
+    &-info {
+        margin-top: 1rem;
+
+        &__name {
+            text-align: center;
+            max-width: 50%;
+            margin-inline: auto;
+            margin-bottom: 2rem;
+            font-size: 1.25em;
+        }
+
+        &__btn {
+            margin-top: 2rem;
+            width: 100%;
+            background: none;
+            border: 2px solid root.$accent-pink;
+            border-radius: 2rem;
+            color: root.$typeography-tertiary;
+            text-transform: uppercase;
+            font-size: .9em;
+            font-weight: 600;
+            padding-block: .8rem;
+        }
+    }
+}

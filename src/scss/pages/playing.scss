@@ -1,0 +1,72 @@
+@use '../placeholders/root.scss';
+
+.music {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+
+    &__cover {
+        width: 20.4rem;
+        height: 20.4rem;
+        object-fit: cover;
+        margin-bottom: 4rem;
+    }
+
+    &__title {
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+
+    &-player {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: .8rem;
+
+        &__progress {
+            grid-column: span 2;
+            width: 100%;
+            height: 3px;
+            background-color: root.$accent-pink;
+        }
+
+        p {
+            &:first-of-type {
+                justify-self: start;
+            }
+
+            &:last-of-type {
+                justify-self: end;
+            }
+        }
+    }
+
+    &-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        &__btn {
+            font-size: 1.5em;
+            fill: root.$primary-black;
+
+            &--gradient {
+                fill: url(#gradient) !important;
+            }
+
+            &--center {
+                fill: root.$primary-white;
+                font-size: 4.5em;
+                background: root.$gradient;
+                padding: 1rem .2rem;
+                border-radius: 50%;
+
+                &.play {
+                    padding-left: .6rem;
+                }
+            }
+        }
+    }
+}

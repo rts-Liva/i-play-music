@@ -1,0 +1,39 @@
+@use '../placeholders/root.scss';
+
+.heading {
+    font-size: 2.25em;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    &--gradient {
+        background: root.$text-gradient;
+        -webkit-background: root.$text-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &--light {
+        color: root.$typeography-secondary;
+    }
+}
+
+.sub-heading {
+    font-size: .9em;
+    text-transform: capitalize;
+    font-weight: 600;
+
+    &--light {
+        color: root.$typeography-secondary;
+    }
+}
+
+.text {
+    font-size: .75em;
+    font-weight: 300;
+    text-transform: capitalize;
+
+    &--light {
+        color: root.$typeography-secondary;
+    }
+}

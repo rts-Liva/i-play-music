@@ -1,0 +1,62 @@
+@use '../placeholders/root.scss';
+
+.splash {
+    &__logo {
+        width: 12.5rem;
+        height: 13.5rem;
+        background: root.$gradient;
+        mask-size: 100%;
+        -webkit-mask-size: 100%;
+        mask-repeat: repeat-x;
+        -webkit-mask-repeat: repeat-x;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: logoEnter 1000ms ease-out forwards;
+
+        &--light {
+            mask-image: url('/logo.svg');
+            -webkit-mask-image: url('/logo.svg');
+        }
+
+        &--dark {
+            mask-image: url('/logo-outline.svg');
+            -webkit-mask-image: url('/logo-outline.svg');
+        }
+    }
+
+    &__title {
+        text-transform: none !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: titleEnter 1000ms ease-in 1000ms forwards;
+    }
+}
+
+@keyframes logoEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes titleEnter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

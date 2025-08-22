@@ -1,0 +1,47 @@
+@use './root.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    color: root.$typeography-primary;
+
+    &:has(body.darkmode) {
+        color: root.$typeography-secondary;
+    }
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    padding-inline: 1.5rem;
+    padding-bottom: 6rem;
+}
+
+body {
+    background-color: root.$primary-white;
+    transition: 300ms;
+
+    &.darkmode {
+        background-color: root.$primary-black;
+    }
+
+    &:has(div.media-player) {
+        main {
+            padding-bottom: 11rem !important;
+        }
+    }
+}
