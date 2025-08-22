@@ -16,7 +16,7 @@
         align-items: center;
         justify-content: space-between;
         gap: .5rem;
-        margin-bottom: .3rem;
+        margin-bottom: .2rem;
 
         &__info {
             display: flex;
@@ -25,7 +25,8 @@
             width: 90%;
             margin-left: -.8rem;
 
-            h2, p {
+            h2,
+            p {
                 max-width: 60vw;
                 overflow: hidden;
                 white-space: nowrap;
@@ -60,6 +61,10 @@
             height: .2rem;
             border-radius: 1rem;
             accent-color: root.$primary-white;
+
+            &::-webkit-slider-thumb {
+                opacity: 0;
+            }
         }
     }
 }

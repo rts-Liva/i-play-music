@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useEffect, useReducer, useRef } from 'react';
+import { useContext, useEffect, useReducer, useRef, useState } from 'react';
 import { FaPause, FaPlay } from 'react-icons/fa6';
 import { playerContext } from '@/providers/player-provider';
 import Reducer from './utils/reducer';
@@ -10,6 +10,7 @@ import '@/scss/components/player.scss';
 
 function Player() {
     const { showPlayer, currentSong } = useContext(playerContext);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [playerState, dispatch] = useReducer(Reducer, {
         isPaused: false,
         isSeeking: false,
@@ -36,32 +37,48 @@ function Player() {
 
     }, [debouncedPosition, playerState.position]);
 
+    // useEffect(() => {
+    //     window.onSpotifyIframeApiReady = (SpotifyIFrameAPI) => {
+    //         setIFrameAPI(SpotifyIFrameAPI);
+    //     }
+    // }, [currentSong]);
+
     useEffect(() => {
-        window.onSpotifyIframeApiReady = (IFrameAPI) => {
+        function createPlayer(IFrameAPI) {
             const options = {
-                uri: currentSong.uri,
+                uri: '',
                 width: 0,
                 height: 0
             };
 
             const callback = (EmbedController) => {
-                embedControllerRef.current = EmbedController;
-                EmbedController.play();
+                if (EmbedController) {
+                    embedControllerRef.current = EmbedController;
+                    setIsLoaded(true);
 
-                EmbedController.addListener('playback_update', e => {
-                    dispatch({ type: 'setIsPaused', isPaused: e.data.isPaused });
-                    dispatch({ type: 'setTiming', position: e.data.position, duration: e.data.duration });
+                    EmbedController.addListener('playback_update', e => {
+                        dispatch({ type: 'setIsPaused', isPaused: e.data.isPaused });
+                        dispatch({ type: 'setTiming', position: e.data.position, duration: e.data.duration });
 
-                    if (e.data.duration === e.data.position) {
-                        dispatch({ type: 'setIsPaused', isPaused: true });
-                    };
-                });
+                        if (e.data.duration === e.data.position) {
+                            dispatch({ type: 'setIsPaused', isPaused: true });
+                        };
+                    });
+                }
             };
 
             IFrameAPI.createController(controlRef.current, options, callback);
-        };
+        }
 
-    }, [currentSong]);
+        window.onSpotifyIframeApiReady = createPlayer;
+    }, []);
+
+    useEffect(() => {
+        if (embedControllerRef.current && currentSong?.uri && isLoaded) {
+            embedControllerRef.current.loadUri(currentSong.uri);
+            embedControllerRef.current.play();
+        }
+    }, [currentSong, embedControllerRef.current, isLoaded]);
 
     function onControllerClick() {
         if (!embedControllerRef.current) return;

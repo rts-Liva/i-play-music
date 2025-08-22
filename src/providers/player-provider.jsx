@@ -9,7 +9,10 @@ function PlayerProvider({ children }) {
     const [currentSong, setCurrentSong] = useState(null);
 
     return (
-        <playerContext.Provider value={{showPlayer, setShowPlayer, currentSong, setCurrentSong}}>
+        <playerContext.Provider value={{
+            showPlayer, setShowPlayer,
+            currentSong, setCurrentSong,
+        }}>
             {children}
         </playerContext.Provider>
     );
